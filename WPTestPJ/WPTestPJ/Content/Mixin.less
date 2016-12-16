@@ -1,0 +1,53 @@
+﻿/* import */
+@import "Variable.less";
+
+/* Mixin.less */
+.isNearToHeaderCommon() {
+    border-bottom: 1px solid @tableBorderColor;
+    border-right: 1px solid @tableBorderColor;
+    border-left: 1px solid @tableBorderColor;
+    box-shadow: @shadowColor 0 0 20px;
+    -webkit-box-shadow: @shadowColor 0 0 20px;
+    -moz-box-shadow: @shadowColor 0 0 20px;
+}
+
+.isLinkMenuCommon() {
+    vertical-align: middle;
+    text-align: center;
+
+    a {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        padding: 9px 12px;
+        font-size: 1.1em;
+
+        &:hover {
+            background: @tableHeaderLightColor;
+        }
+
+        &:active {
+            background: @tableHeaderLightHoverColor;
+        }
+    }
+}
+
+.setLinkIcon(@content: "\f108", @paddingRight: 4px) {
+    font-family: FontAwesome;
+    content: @content;
+    padding-right: @paddingRight;
+}
+
+.pointBtn() {
+    color: @whiteColor;
+    background-color: @pointColor;
+    border: 1px solid @potinBorderColor;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus {
+        color: @whiteColor;
+        background-color: @pointHoverColor;
+    }
+}

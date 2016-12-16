@@ -1,0 +1,42 @@
+﻿@model WPTestPJ.Web.Models.WPModel
+@using WPTestPJ.Common.Models
+
+<div class="wpUserListBlock">
+    <div class="table listTable">
+        <div class="table-header-group">
+            <div class="table-cell">No</div>
+            <div class="table-cell">ログインID</div>
+            <div class="table-cell">ニックネーム</div>
+            <div class="table-cell">ブログ上の表示名</div>
+            <div class="table-cell">メールアドレス</div>
+            <div class="table-cell">登録日付</div>
+            <div class="table-cell">有効期限</div>
+        </div>
+        @{
+            int count = 1;
+        }
+
+        @foreach (WPUserModel wpUser in Model.UserList)
+        {
+            <div class="table-row">
+                <div class="table-cell">@count</div>
+                <div class="table-cell">@wpUser.UserLogin</div>
+                <div class="table-cell">@wpUser.UserNicename</div>
+                <div class="table-cell">@wpUser.DisplayName</div>
+                <div class="table-cell">@wpUser.UserEmail</div>
+                <div class="table-cell">@wpUser.UserRegistered</div>
+                @if (string.IsNullOrEmpty(wpUser.ExpireDateTimestamp))
+                {
+                    <div class="table-cell">なし</div>
+                }
+                else
+                {
+                    <div class="table-cell">@wpUser.ExpireDate</div>
+                }
+
+            </div>
+                count++;
+        }
+    </div>
+</div>
+

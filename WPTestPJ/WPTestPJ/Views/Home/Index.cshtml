@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model WPTestPJ.Web.Models.WPModel
+
+@using WPTestPJ.Web
+@using WPTestPJ.Common
+@using WPTestPJ.Common.Models
+@using WPTestPJ.Web.Models
+
+<div class="wpInfoBlock">
+    <div class="listBlock userList">
+        <h2>WordPress ユーザー一覧</h2>
+
+        <div class="buttonBlock">
+            <button type="button" id="btnWPUserAddSubmit" value="新しいWPユーザーを追加" class="btn btn-default">
+                新しいWPユーザーを追加
+            </button>
+        </div>
+        @Html.Partial("_wpUserList", Model)
+    </div>
+
+    <div class="listBlock postList">
+        <h2>WordPress 投稿一覧</h2>
+        <div class="table listTable">
+            <div class="table-header-group">
+                <div class="table-cell">No</div>
+                <div class="table-cell">作成者</div>
+                <div class="table-cell">投稿日</div>
+                <div class="table-cell">タイトル</div>
+                <div class="table-cell">投稿ステータス</div>
+                <div class="table-cell">コメントステータス</div>
+                <div class="table-cell">ピン・ステータス</div>
+                <div class="table-cell">コメント数</div>
+                <div class="table-cell">URL</div>
+            </div>
+            @{
+                int count = 1;
+            }
+            @if (null != Model.PostList) { 
+            foreach (WPPostModel wpPost in Model.PostList)
+        {
+        <div class="table-row">
+            <div class="table-cell">@count</div>
+            <div class="table-cell">@wpPost.PostAuthorName</div>
+            <div class="table-cell">@wpPost.PostDate</div>
+            <div class="table-cell">@wpPost.PostTitle</div>
+            <div class="table-cell">@wpPost.PostStatusName</div>
+            <div class="table-cell">@wpPost.CommentStatusName</div>
+            <div class="table-cell">@wpPost.PingStatusName</div>
+            <div class="table-cell">@wpPost.CommentCount</div>
+            <div class="table-cell">@wpPost.Guid</div>
+        </div>
+        count++;
+        }
+            }
+        </div>
+    </div>
+    @Html.Partial("_ModalWPUserAdd", new WPUserAddModel())
+</div>
