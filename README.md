@@ -1,7 +1,7 @@
 # WordpressEtc
 
 ## WPTestPJ
-WordPressの情報を別のWebサイトで管理するため、検証用に作成したプロトタイププロジェクト
+WordPressの情報を別のWebサイトで管理することを想定し、検証用に作成したプロトタイププロジェクト
 
 ### 開発仕様
 - C# ASP.NET 4.5.1
