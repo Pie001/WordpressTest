@@ -1,4 +1,4 @@
-# WordpressEtc
+# WordpressTest
 
 ## WPTestPJ
 WordPressの情報を別のWebサイトで管理することを想定し、検証用に作成したプロトタイププロジェクト
