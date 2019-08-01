@@ -1,5 +1,7 @@
 # WordpressTest
 
+[한국어](README.md), [日本語](README.ja.md)
+
 ## WPTestPJ
 WordPressの情報を別のWebサイトで管理することを想定し、検証用に作成したプロトタイププロジェクト
 
